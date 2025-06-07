@@ -1,91 +1,108 @@
 # ProtoForge
 
-*An open-source AI-Agent and agentic AI framework for autonomous code generation, product prototyping, iterative development, and IP protection — powered by composable LLM agents and designed for private, full-stack R&D workflow.*
+*An open-source AI-agent and agentic AI framework for autonomous code generation, product prototyping, iterative development, and IP protection — powered by composable LLM agents and designed for private, full-stack R&D workflow.*
 
-[中文版本](./README-zh.md) | [Architecture Documentation](./docs/architecture.md)
+[中文版本 | Chinese Version](README-zh.md)
 
 ## Overview
 
-ProtoForge is a next-generation AI-Agent framework that revolutionizes software development workflows through intelligent automation. Built with Go at its core, it provides a comprehensive suite of composable agents that handle everything from initial prototyping to production deployment while ensuring intellectual property protection.
+ProtoForge is a comprehensive AI-agent framework specifically designed for SME (Small and Medium Enterprises) and ISV (Independent Software Vendors) to accelerate their product development lifecycle. Built with Go as the core language, ProtoForge provides a secure, scalable, and enterprise-ready solution for autonomous code generation, rapid prototyping, and intellectual property protection.
 
-## Key Pain Points & Core Value
+### Key Pain Points Addressed
 
-### Pain Points Addressed
-- **Fragmented Development Workflow**: Traditional development requires multiple disconnected tools and manual coordination
-- **IP Protection Challenges**: Code generation without proper licensing compliance and attribution tracking
-- **Limited Multi-Agent Orchestration**: Existing frameworks lack sophisticated agent collaboration capabilities
-- **Enterprise Security Concerns**: Most AI tools require cloud connectivity, raising data privacy issues
-- **Integration Complexity**: Difficult integration with existing development toolchains and enterprise systems
+- **Fragmented Development Workflow**: Traditional R&D processes lack seamless integration between prototyping, development, and IP protection
+- **Limited AI Integration**: Existing frameworks don't provide enterprise-grade security and compliance for sensitive code generation
+- **Scalability Constraints**: Most AI-agent frameworks struggle with concurrent multi-agent orchestration and horizontal scaling
+- **IP Protection Gaps**: Current solutions lack built-in mechanisms for code provenance tracking and license compliance
+- **Complex Multi-Language Integration**: Difficulty in creating unified workflows across different programming languages and platforms
 
 ### Core Value Proposition
-- **Autonomous Development Pipeline**: End-to-end automation from concept to deployment
-- **IP-Safe Code Generation**: Built-in license compliance and attribution tracking
-- **Private Cloud Ready**: Fully offline operation with enterprise-grade security
-- **Multi-Agent Orchestration**: Sophisticated agent collaboration for complex workflows
-- **Standards Compatibility**: Compatible with mainstream AI-Agent SDKs and interfaces
+
+ProtoForge transforms the traditional R&D workflow by providing:
+
+1. **Autonomous Code Generation**: AI-powered code creation with built-in quality assurance and testing
+2. **Intelligent Prototyping**: Rapid prototype development with iterative refinement capabilities  
+3. **IP Protection Framework**: Comprehensive license scanning, code watermarking, and provenance tracking
+4. **Enterprise Security**: Private deployment with role-based access control and audit logging
+5. **Composable Agent Architecture**: Modular design enabling custom agent workflows and integrations
 
 ## Key Features
 
-### 🚀 **Autonomous Code Generation**
-- Multi-language code generation with context awareness
-- Intelligent code review and optimization
-- Automated testing and validation
-- Documentation generation and maintenance
+### 🚀 **Three-Stage R&D Rocket**
+- **Stage 1**: Prototype Generation with AI-assisted design and validation
+- **Stage 2**: Iterative Development with automated testing and code review
+- **Stage 3**: IP Protection with license compliance and code attribution
 
-### 🔄 **Multi-Agent Orchestration**
-- Composable agent workflows
-- Event-driven agent communication
-- Hierarchical agent management
-- Visual workflow designer
+### 🛡️ **Security-First Architecture**
+- Built-in security agent for autonomous threat detection and response
+- Private deployment with encrypted communication
+- RBAC (Role-Based Access Control) and comprehensive audit trails
+- Compliance framework supporting GDPR, ISO 27001, and industry standards
 
-### 🛡️ **IP Protection & Compliance**
-- License compliance scanning
-- Code attribution tracking
-- Watermarking and traceability
-- Enterprise audit trails
+### 🔧 **Extensible Agent Framework**
+- Plugin-based architecture supporting custom tools and integrations
+- Multi-language support with Go core and Python/JavaScript extensions
+- Visual workflow designer with drag-and-drop interface
+- RESTful APIs and gRPC interfaces for seamless integration
 
-### 🔒 **Enterprise Security**
-- Private deployment options
-- Multi-tenant isolation
-- Role-based access control
-- Comprehensive audit logging
-
-### 🔌 **Integration & Extensibility**
-- Plugin architecture for custom tools
-- API-first design
-- Multiple deployment options
-- Standards-compliant interfaces
+### 📊 **Enterprise Observability**
+- Real-time monitoring and performance metrics
+- Distributed tracing for complex agent workflows
+- Centralized logging with structured event correlation
+- Custom dashboards and alerting systems
 
 ## Architecture Overview
 
 ProtoForge follows a layered, microservices architecture designed for scalability and maintainability:
 
-```
+```mermaid
+graph TD
+    %% 系统架构图
+    subgraph UI[用户界面层（User Interface Layer）]
+        A1[Web控制台（Web Console）] 
+        A2[CLI工具（CLI Tools）]
+        A3[可视化编辑器（Visual Editor）]
+    end
 
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Presentation  │    │   Integration   │    │   Monitoring    │
-│      Layer      │    │      Layer      │    │      Layer      │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-┌─────────────────────────────────────────────────────────────────┐
-│                    Application Layer                           │
-└─────────────────────────────────────────────────────────────────┘
-┌─────────────────────────────────────────────────────────────────┐
-│                      Domain Layer                              │
-└─────────────────────────────────────────────────────────────────┘
-┌─────────────────────────────────────────────────────────────────┐
-│                  Infrastructure Layer                          │
-└─────────────────────────────────────────────────────────────────┘
+    subgraph API[API网关层（API Gateway Layer）]
+        B1[REST API网关（REST Gateway）]
+        B2[gRPC服务（gRPC Services）]
+        B3[认证授权（Auth & Authorization）]
+    end
 
+    subgraph CORE[核心引擎层（Core Engine Layer）]
+        C1[代理编排器（Agent Orchestrator）]
+        C2[工作流引擎（Workflow Engine）]
+        C3[代码生成器（Code Generator）]
+    end
+
+    subgraph AGENT[智能体层（Agent Layer）]
+        D1[原型设计代理（Prototype Agent）]
+        D2[开发测试代理（DevTest Agent）]
+        D3[安全防护代理（Security Agent）]
+    end
+
+    subgraph INFRA[基础设施层（Infrastructure Layer）]
+        E1[向量数据库（Vector DB）]
+        E2[知识图谱（Knowledge Graph）]
+        E3[监控日志（Monitoring & Logging）]
+    end
+
+    UI --> API
+    API --> CORE
+    CORE --> AGENT
+    AGENT --> INFRA
 ````
 
-For detailed architecture information, see [Architecture Documentation](./docs/architecture.md).
+For detailed architecture information, see [Architecture Documentation](docs/architecture.md).
 
 ## Quick Start
 
 ### Prerequisites
-- Go 1.20.2 or later
-- Docker (optional, for containerized deployment)
-- Git
+
+* Go 1.20.2 or higher
+* Docker and Docker Compose (for containerized deployment)
+* Git for version control
 
 ### Installation
 
@@ -94,78 +111,178 @@ For detailed architecture information, see [Architecture Documentation](./docs/a
 git clone https://github.com/turtacn/protoforge.git
 cd protoforge
 
-# Build the project
+# Initialize Go modules
+go mod tidy
+
+# Build the application
 make build
 
 # Run with default configuration
 ./bin/protoforge server --config configs/default.yaml
-````
+```
 
-### Basic Usage
+### Basic Usage Example
+
+```go
+package main
+
+import (
+    "context"
+    "log"
+    
+    "github.com/turtacn/protoforge/pkg/agent"
+    "github.com/turtacn/protoforge/pkg/workflow"
+)
+
+func main() {
+    // Initialize ProtoForge client
+    client, err := agent.NewClient(&agent.Config{
+        APIEndpoint: "http://localhost:8080",
+        APIKey:      "your-api-key",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    // Create a prototype generation workflow
+    wf := workflow.NewBuilder().
+        AddAgent("prototype", agent.TypePrototype).
+        AddAgent("validator", agent.TypeValidator).
+        Connect("prototype", "validator").
+        Build()
+
+    // Execute workflow
+    result, err := client.ExecuteWorkflow(context.Background(), wf, &workflow.Input{
+        ProjectSpec: "Create a REST API for user management",
+        Language:    "go",
+        Framework:   "gin",
+    })
+    
+    if err != nil {
+        log.Fatal(err)
+    }
+    
+    log.Printf("Generated code: %s", result.GeneratedCode)
+}
+```
+
+### Docker Deployment
 
 ```bash
-# Initialize a new project
-protoforge init --template web-service --name my-project
+# Quick start with Docker Compose
+docker-compose up -d
 
-# Start agent workflow
-protoforge agent start --workflow prototype-to-production
-
-# Monitor agent progress
-protoforge status --workflow-id <workflow-id>
+# Access the web console
+open http://localhost:3000
 ```
 
 ## Use Cases
 
-### 1. Product R\&D Three-Stage Rocket
+### 1. Product R\&D Three-Stage Workflow
 
-* **Prototyping Stage**: Rapid MVP development with AI-generated components
-* **Development & Testing**: Automated code generation, testing, and optimization
-* **IP Protection**: License compliance, documentation, and patent preparation
+```go
+// Stage 1: Prototype Generation
+prototype := protoforge.NewPrototypeAgent()
+spec, err := prototype.GenerateFromRequirements(ctx, requirements)
 
-### 2. Full-Stack Security GPT (YShield)
+// Stage 2: Iterative Development  
+developer := protoforge.NewDeveloperAgent()
+code, err := developer.ImplementPrototype(ctx, spec)
 
-* **Autonomous Security Defense**: AI-driven threat detection and response
-* **Closed-loop Security Posture**: Continuous monitoring and adaptation
-* **Enterprise Integration**: Seamless integration with existing security infrastructure
+// Stage 3: IP Protection
+ipAgent := protoforge.NewIPProtectionAgent()
+report, err := ipAgent.ScanAndProtect(ctx, code)
+```
 
-## Documentation
+### 2. How to develop AI agents for Autonomous Security Defense System
 
-* [Architecture Guide](./docs/architecture.md)
-* [API Reference](./docs/api.md)
-* [Plugin Development](./docs/plugins.md)
-* [Deployment Guide](./docs/deployment.md)
-* [Examples](./examples/)
+```go
+// Security agent for continuous threat monitoring
+securityAgent := protoforge.NewSecurityAgent(&SecurityConfig{
+    ThreatModels:    []string{"injection", "privilege-escalation"},
+    ResponseActions: []string{"quarantine", "alert", "remediate"},
+})
+
+// Deploy autonomous defense
+err := securityAgent.Deploy(ctx, &DeploymentConfig{
+    MonitoringScope: "full-stack",
+    AutoRemediation: true,
+})
+```
+
+## Configuration
+
+ProtoForge supports flexible configuration through YAML files:
+
+```yaml
+# configs/default.yaml
+server:
+  host: "0.0.0.0"
+  port: 8080
+  tls:
+    enabled: false
+
+agents:
+  prototype:
+    model: "gpt-4"
+    max_tokens: 2048
+  security:
+    threat_detection: true
+    auto_response: true
+
+database:
+  vector_db:
+    provider: "chroma"
+    connection_string: "http://localhost:8000"
+```
 
 ## Contributing
 
-We welcome contributions! Please see our [Contributing Guide](./CONTRIBUTING.md) for details.
+We welcome contributions from the community! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
 ### Development Setup
 
 ```bash
+# Fork and clone the repository
+git clone https://github.com/yourusername/protoforge.git
+
 # Install development dependencies
 make dev-setup
 
 # Run tests
 make test
 
-# Run linting
-make lint
-
-# Generate documentation
-make docs
+# Run with live reload
+make dev
 ```
+
+### Contribution Areas
+
+* Agent implementations and extensions
+* Integration connectors for popular tools
+* Documentation and examples
+* Performance optimizations
+* Security enhancements
 
 ## License
 
-This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+ProtoForge is released under the MIT License. See [LICENSE](LICENSE) file for details.
 
-## Community
+## Community & Support
 
-* [GitHub Discussions](https://github.com/turtacn/protoforge/discussions)
-* [Issue Tracker](https://github.com/turtacn/protoforge/issues)
-* [Documentation](https://protoforge.dev)
+* **Documentation**: [docs.protoforge.dev](https://docs.protoforge.dev)
+* **Issues**: [GitHub Issues](https://github.com/turtacn/protoforge/issues)
+* **Discussions**: [GitHub Discussions](https://github.com/turtacn/protoforge/discussions)
+* **Discord**: [ProtoForge Community](https://discord.gg/protoforge)
 
-## Acknowledgments
+## Roadmap
 
-ProtoForge builds upon the excellent work of the open-source AI community, including inspiration from LangChain, AutoGen, CrewAI, Eino, and other pioneering frameworks.
+* [ ] Visual workflow designer (Q2 2025)
+* [ ] Advanced multi-language support (Q3 2025)
+* [ ] Enterprise SSO integration (Q3 2025)
+* [ ] Kubernetes operator (Q4 2025)
+* [ ] Marketplace for custom agents (Q1 2026)
+
+---
+
+**ProtoForge** - Forging the future of AI-powered development workflows.
