@@ -60,12 +60,6 @@ graph TD
     %% 系统架构概览图
     subgraph UI[用户界面层（User Interface Layer）]
         A1[Web控制台（Web Console）] 
-        A2
-我将继续完成README-zh.md文件的内容，并接着完成任务二的架构设计文档。
-
-### 继续README-zh.md内容
-
-```markdown
         A2[CLI工具（CLI Tools）]
         A3[可视化编辑器（Visual Editor）]
     end
