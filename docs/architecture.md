@@ -53,10 +53,6 @@ graph TD
         S1[智能需求分析（Intelligent Requirement Analysis）]
         S2[自主代码生成（Autonomous Code Generation）]
         S3[主动安全防护（Proactive Security Defense）]
-        S4[知识产权保
-我将继续完成架构设计文档的内容。
-
-```markdown
         S4[知识产权保护（IP Protection）]
     end
 
@@ -108,7 +104,7 @@ graph TD
 ProtoForge采用分层微服务架构，确保系统的可扩展性、可维护性和安全性：
 
 ```mermaid
-graph TB
+graph TD
     %% ProtoForge总体架构图
     subgraph EL[展现层（Presentation Layer）]
         E1[Web控制台（Web Console）]
