@@ -315,7 +315,7 @@ graph TB
 ProtoForge采用模型无关的设计，支持多种AI模型：
 
 ```mermaid
-graph LR
+graph TD
     %% AI模型集成架构
     subgraph MA[模型适配层（Model Adapter Layer）]
         MA1[OpenAI适配器（OpenAI Adapter）]
@@ -441,3 +441,11 @@ protoforge/
 ├── LICENSE                      # 开源许可证
 └── CONTRIBUTING.md              # 贡献指南
 ```
+
+## 6\. 参考资料
+
+- [1] LangChain Documentation. https://python.langchain.com/docs/get\_started/introduction  
+- [2] Microsoft AutoGen. https://microsoft.github.io/autogen/  
+- [3] Eino Framework. https://github.com/cloudwego/eino  
+- [4] CrewAI Framework. https://github.com/joaomdmoura/crewAI  
+- [5] Standard Go Project Layout. https://github.com/golang-standards/project-layout
